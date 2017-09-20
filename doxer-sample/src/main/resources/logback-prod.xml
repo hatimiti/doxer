@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE logback>
+<included
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="./logback.xsd">
+
+	<logger name="org.thymeleaf" level="ERROR" />
+
+	<appender name="MAIL" class="ch.qos.logback.classic.net.SMTPAppender">
+		<smtpHost>localhost</smtpHost>
+		<smtpPort>25</smtpPort>
+		<to>info@localhost</to>
+		<from>sample@exsample.com</from>
+		<subject>TESTING: %logger{20} - %m</subject>
+		<username></username>
+		<password></password>
+		<asynchronousSending>false</asynchronousSending>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>%date{yyyy/MM/dd HH:mm:ss:SSS} %.5level - MDC[%X{sid},%X{ip},%X{ua},%X{id}] %logger{0}#%.20method:%L %msg%n</pattern>
+		</layout>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+	</root>
+	<logger name="logger.mail.error" level="ERROR">
+		<appender-ref ref="MAIL" />
+	</logger>
+</included>

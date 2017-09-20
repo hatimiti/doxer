@@ -1,0 +1,9 @@
+rootProject.name = 'doxer'
+
+include 'doxer-core'
+include 'doxer-common'
+include 'doxls'
+
+//include 'doxer-sample'
+//project(':doxer-sample').buildFileName = "build.gradle"
+
