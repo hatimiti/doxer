@@ -246,8 +246,8 @@ project('doxer-core') {
 project('doxer-common') {
   
   dependencies {
-    compile files('.lib/javax.servlet-api-3.1.0.jar')
-  
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.3.2'
     compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
   
