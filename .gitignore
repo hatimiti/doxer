@@ -1,7 +1,7 @@
 *.sw*
 .DS_Store
 .settings
-bin
+/bin
 .gradle
 
 classes/
